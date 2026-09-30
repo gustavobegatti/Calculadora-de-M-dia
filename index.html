@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Média do bimestre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <div class="folha">
+
+      <!-- Tela 1: código de acesso -->
+      <section id="telaAcesso">
+        <h1>Média do bimestre</h1>
+        <p class="sub">Digite o código da turma para entrar.</p>
+        <div class="campo">
+          <label for="codigo">Código de acesso</label>
+          <input id="codigo" type="password" autocomplete="off" placeholder="Código da turma">
+        </div>
+        <button id="btnEntrar">Entrar</button>
+        <p class="erro" id="erroAcesso" role="alert"></p>
+      </section>
+
+      <!-- Tela 2: notas -->
+      <section id="telaNotas" class="oculto">
+        <div class="topo">
+          <h1>Suas notas</h1>
+          <button class="sec" id="btnSair">Sair</button>
+        </div>
+        <p class="sub">Adicione a nota de cada matéria e calcule a média.</p>
+
+        <div class="linha">
+          <div class="campo">
+            <label for="materia">Matéria</label>
+            <input id="materia" type="text" placeholder="Ex.: Matemática">
+          </div>
+          <div class="campo">
+            <label for="nota">Nota</label>
+            <input id="nota" type="number" min="0" max="10" step="0.1" inputmode="decimal" placeholder="0 a 10">
+          </div>
+        </div>
+        <button id="btnAdd">Adicionar nota</button>
+        <p class="erro" id="erroNota" role="alert"></p>
+
+        <ul id="lista"></ul>
+        <p class="vazio" id="vazio">Nenhuma nota adicionada ainda.</p>
+
+        <div class="acoes">
+          <button id="btnCalc">Calcular média</button>
+          <button class="sec" id="btnLimpar">Limpar tudo</button>
+        </div>
+
+        <div class="resultado oculto" id="resultado" aria-live="polite">
+          <small>Média do bimestre</small>
+          <div class="media" id="media"></div>
+          <div class="status" id="status"></div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
